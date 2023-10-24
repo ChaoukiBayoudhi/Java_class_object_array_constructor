@@ -43,4 +43,31 @@ public class Space2D {
         return -1;
     }
 
+    //increase the array "tabPoints" physical size
+    public void increaseSize(int m){
+
+        //add the "m" new points to the tabPoints
+        if(m<=tabPoints.length-nbPoints)
+            for(int i=nbPoints;i<nbPoints+m;i++) {
+                tabPoints[i] = new Point();
+                tabPoints[i].getCoordinates();
+            }
+        else {
+            Point[] tab=null;
+            //if the empty cases are greater than the "m"
+            if(m>tabPoints.length-nbPoints)
+                tab=new Point[m+nbPoints];
+            //copy Points from tabPoints into tab
+            for (int i = 0; i < nbPoints; i++)
+                tab[i]=tabPoints[i].copy();
+
+            for(int i=nbPoints;i<nbPoints+m;i++) {
+                tab[i] = new Point();
+                tab[i].getCoordinates();
+            }
+            tabPoints=tab;
+        }
+
+        }
+
 }
