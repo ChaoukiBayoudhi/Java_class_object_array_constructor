@@ -1,28 +1,54 @@
+import java.util.Scanner;
+
 public class Space2D {
-    //attributes
     private Point[] tabPoints;
-    private int nbPoints=0;//number of points in the space
-    //constructors
-    public Space2D(){
+    private int nbPoints=0;
+    //100 is a default value for the maximum number of points in the space
+    //constructor without parameters
+    public Space2D()
+    {
         tabPoints=new Point[100];
     }
-    //surcharged constructor
-    public Space2D(int maxSize){
-        tabPoints=new Point[maxSize];
+    //constructor with parameters
+    public Space2D(int maxSpace)
+    {
+        tabPoints=new Point[maxSpace];
     }
-    //methods
-    //this method gets nbPoints points from the keyboard
-    // and stores them in the tabPoints array
-    public void setTabPoints(int nbPoints){
+
+    //print all points in the space (array) to the screen
+    public void printSpace()
+    {
+        for(int i=0;i<nbPoints;i++)
+        {
+            tabPoints[i].showCoordinates();
+        }
     }
-    //this method prints the points of the tabPoints array
-    //on the screen
-    public void showTabPoints(){
+    //get some points information from the keyboard and add them to the space(to the array)
+    public void setTabPoints()
+    {
+        System.out.println("Enter the number of points: ");
+        Scanner sc=new Scanner(System.in);
+        nbPoints=sc.nextInt();
+        //or
+        //this.nbPoints=sc.nextInt();
+        for (int i = 0; i < nbPoints; i++) {
+            tabPoints[i]=new Point();
+            tabPoints[i].getCoordinates();
+        }
     }
-    //this method returns the index of the point p in the tabPoints array
-    //if p is not found, it returns -1
-    public int find(Point p){
-        return -1;
+    //find a given point in the space (array)
+    //return the index of the point in the array
+    //return -1 if the point is not in the space
+    public int findPoint(Point p)
+    {
+        int i=0;
+        while(i<nbPoints && !tabPoints[i].compare(p))
+        {
+            i++;
+        }
+        if(i==nbPoints)
+            return -1;
+        return i;
     }
 
 }
