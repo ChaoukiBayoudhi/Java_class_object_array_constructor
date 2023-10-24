@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e64cd5d-7112-4703-839a-650fcc280294" name="Changes" comment="implement the main method" />
+    <list default="true" id="6e64cd5d-7112-4703-839a-650fcc280294" name="Changes" comment="implement the main method">
+      <change beforePath="$PROJECT_DIR$/src/Space2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Space2D.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +72,7 @@
       <workItem from="1697617973320" duration="6506000" />
       <workItem from="1698132504442" duration="806000" />
       <workItem from="1698136409841" duration="1276000" />
+      <workItem from="1698151642262" duration="2217000" />
     </task>
     <task id="LOCAL-00001" summary="implement Point and Space2D classes">
       <option name="closed" value="true" />
